@@ -1,6 +1,6 @@
 class Player
 {
-    constuctor(name, symbol)
+    constructor(name, symbol)
     {
         this.name = name;
         this.symbol = symbol;
