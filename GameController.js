@@ -8,29 +8,36 @@ class Controller
     board = new boardObject.Board();
     players = [new playerObject.Player("2nd Player", 'O'), new playerObject.Player("1st Player", 'X')];
 
-    function startGame()
+    startGame()
     {
-        while(turnsRemaining > 0 && !gameFinished)
+        while(this.turnsRemaining > 0 && !this.gameFinished)
         {
-            var position = takePosition();
-            board.setSymbol(position, players[turnsRemaining+%2].symbol);
-            gameFinished = board.tester(position);
-            turnsRemaining --;
+            this.play()
         }
-        displayResult();
+        this.displayResult();
+        return;
     }
 
-    function takePosition()
+    play()
     {
-        return players[turnsRemaining%2].position;
+        var position = this.takePosition();
+        this.board.setSymbol(position, this.players[this.turnsRemaining%2].symbol);
+        this.gameFinished = this.board.tester(position);
+        this.turnsRemaining --;
     }
 
-    function displayResult()
+    takePosition()
     {
-        gameFinished ? console.log(players[(turnsRemaining+1)%2] + " won") : console.log("Draw Match");
+        return this.players[this.turnsRemaining%2].position;
+    }
+
+    displayResult()
+    {
+        this.gameFinished ? console.log(players[(turnsRemaining+1)%2] + " won") : console.log("Draw Match");
+        return;
     }
 }
 
 module.exports ={
-Controller:Controller;
+Controller:Controller
 }
