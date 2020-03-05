@@ -5,27 +5,34 @@ class Board
 
     constructor()
     {
-        board[10] = 0;
+        this.board[10] = 0;
     }
 
-    function setSymbol(position, symbol)
+    setSymbol(position, symbol)
     {
-        board[position] = symbol;
+        this.board[position] = symbol;
+        this.displayBoard();
     }
 
-    function tester(position)
+    tester(position, symbol)
     {
-        var conditionsWithPosition = conditions.filter(condition => condition.includes(position));
-        return conditionsWithPosition.some(areSymbolsSame, symbol);
+        var conditionsWithPosition = this.conditions.filter(condition => condition.includes(position));
+        return conditionsWithPosition.some(this.areSymbolsSame, symbol);
     }
 
-    function areSymbolsSame(condition)
+    areSymbolsSame(condition)
     {
         return condition.every(cell => cell == this);
+    }
+
+    displayBoard()
+    {
+        console.log(this.board.slice(0,10));
+        return ;
     }
 }
 
 module.exports =
 {
-    Board : Board;
+    Board : Board
 };
