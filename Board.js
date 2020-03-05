@@ -28,4 +28,4 @@ class Board
 module.exports =
 {
     Board : Board;
-}
+};
