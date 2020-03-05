@@ -1,22 +1,28 @@
+const readline = require('readline');
+const rl = readline.createInterface({
+    input: process.stdin,
+    output: process.stdout
+});
 class Player
 {
+    position = 0;
     constructor(name, symbol)
     {
         this.name = name;
-        this.symbol = symbol;
+        this.symbo = symbol;
     }
     get symbol()
     {
-        return this.symbol;
+        return this.symbo;
     }
     get position()
     {
-        // input position
-        return position;
+        // get position from console
+        return ;
     }
 }
 
 module.exports =
 {
-    Player : Player;
+    Player : Player
 }
