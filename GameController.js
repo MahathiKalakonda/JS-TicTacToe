@@ -13,6 +13,7 @@ class Controller
         while(turnsRemaining > 0 && !gameFinished)
         {
             var position = takePosition();
+            board.setSymbol(position, players[turnsRemaining+%2].symbol);
             gameFinished = board.tester(position);
             turnsRemaining --;
         }
