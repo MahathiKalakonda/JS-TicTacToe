@@ -1,4 +1,4 @@
 controller = require('./GameController');
 
-var ticTacController = controller.Controller();
+var ticTacController = new controller.Controller();
 ticTacController.startGame();
