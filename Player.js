@@ -1,24 +1,25 @@
-const readline = require('readline');
-const rl = readline.createInterface({
-    input: process.stdin,
-    output: process.stdout
-});
+const prompt = require('prompt-sync')();
 class Player
 {
-    position = 0;
     constructor(name, symbol)
     {
+        this.symbol = symbol;
         this.name = name;
-        this.symbo = symbol;
     }
-    get symbol()
+    getSymbol()
     {
-        return this.symbo;
+        return this.symbol;
     }
-    get position()
+
+    getName()
     {
-        // get position from console
-        return ;
+        return this.name;
+    }
+
+    getPosition()
+    {
+        const position = prompt('Enter Position');
+        return position;
     }
 }
 

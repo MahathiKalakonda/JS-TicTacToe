@@ -5,29 +5,30 @@ class Board
 
     constructor()
     {
-        this.board[10] = 0;
+        this.board[9] = 0;
     }
 
     setSymbol(position, symbol)
     {
+//        this.board[position] ? console.log('error',) :
         this.board[position] = symbol;
         this.displayBoard();
     }
 
     tester(position, symbol)
     {
-        var conditionsWithPosition = this.conditions.filter(condition => condition.includes(position));
-        return conditionsWithPosition.some(this.areSymbolsSame, symbol);
-    }
-
-    areSymbolsSame(condition)
-    {
-        return condition.every(cell => cell == this);
+        var conditionsWithPosition = this.conditions.filter(condition => condition.indexOf(position) != 0), board = this.board;
+        return conditionsWithPosition.some(function(condition)
+        {
+            return condition.every(cell => symbol == board[cell]);
+        });
     }
 
     displayBoard()
     {
-        console.log(this.board.slice(0,10));
+        console.log(this.board.slice(0,3));
+        console.log(this.board.slice(3,6));
+        console.log(this.board.slice(6,9));
         return ;
     }
 }

@@ -21,19 +21,19 @@ class Controller
     play()
     {
         var position = this.takePosition();
-        this.board.setSymbol(position, this.players[this.turnsRemaining%2].symbol);
-        this.gameFinished = this.board.tester(position);
+        this.board.setSymbol(position, this.players[this.turnsRemaining%2].getSymbol());
+        this.gameFinished = this.board.tester(position, this.players[this.turnsRemaining%2].symbol);
         this.turnsRemaining --;
     }
 
     takePosition()
     {
-        return this.players[this.turnsRemaining%2].position;
+        return this.players[this.turnsRemaining%2].getPosition();
     }
 
     displayResult()
     {
-        this.gameFinished ? console.log(players[(turnsRemaining+1)%2] + " won") : console.log("Draw Match");
+        this.gameFinished ? console.log(this.players[(this.turnsRemaining+1)%2].getName() + " won") : console.log("Draw Match");
         return;
     }
 }
