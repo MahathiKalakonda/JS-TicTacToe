@@ -9,7 +9,6 @@ class Board
     setSymbol(position, symbol)
     {
         this.board[position] = symbol;
-        this.displayBoard();
     }
 
     isGameFinished(position, symbol)
@@ -21,13 +20,6 @@ class Board
         });
     }
 
-    displayBoard()
-    {
-        console.log(this.board.slice(0,3));
-        console.log(this.board.slice(3,6));
-        console.log(this.board.slice(6,9));
-        return ;
-    }
 }
 
 module.exports =
