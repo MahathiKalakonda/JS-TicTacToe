@@ -5,15 +5,14 @@ class Controller
 {
     constructor()
     {
-        gameFinished = false;
-        turnsRemaining = 9;
-        board = new boardObject.Board();
-        players = [new playerObject.Player("2nd Player", 'O'), new playerObject.Player("1st Player", 'X')];
+        this.gameFinished = false;
+        this.turnsRemaining = 9;
+        this.board = new boardObject.Board();
+        this.players = [new playerObject.Player("2nd Player", 'O'), new playerObject.Player("1st Player", 'X')];
     }
 
     startGame()
     {
-        //this.board.board = 'something'
         while(this.turnsRemaining > 0 && !this.gameFinished)
         {
             this.play()
