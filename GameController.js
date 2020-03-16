@@ -1,6 +1,6 @@
-boardObject = require('./Board');
-playerObject = require('./Player');
-outputObject = require('./consoleAndPrompt');
+const boardObject = require('./Board');
+const playerObject = require('./Player');
+const inputAndOutputObject = require('./consoleAndPrompt');
 
 class GameController
 {
@@ -8,7 +8,7 @@ class GameController
     {
         this.gameFinished = false;
         this.turnsRemaining = 9;
-        this.display = new outputObject.consoleAndPrompt();
+        this.promptAndDisplay = new inputAndOutputObject.consoleAndPrompt();
         this.board = new boardObject.Board();
         this.players = [new playerObject.Player("2nd Player", 'O'), new playerObject.Player("1st Player", 'X')];
     }
@@ -19,15 +19,15 @@ class GameController
         {
             this.play()
         }
-        this.display.displayResult(this.players[(this.turnsRemaining+1)%2].getName(), this.gameFinished);
+        this.promptAndDisplay.displayResult(this.players[(this.turnsRemaining+1)%2].getName(), this.gameFinished);
         return 0;
     }
 
     play()
     {
-        var position = this.players[this.turnsRemaining%2].getPosition();
+        var position = this.promptAndDisplay.getPosition(this.players[this.turnsRemaining%2].getName());
         this.board.setSymbol(position, this.players[this.turnsRemaining%2].getSymbol());
-        this.display.displayBoard(this.board.board);
+        this.promptAndDisplay.displayBoard(this.board.board);
         this.gameFinished = this.board.isGameFinished(position, this.players[this.turnsRemaining%2].symbol);
         this.turnsRemaining --;
     }
