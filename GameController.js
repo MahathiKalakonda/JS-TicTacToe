@@ -23,15 +23,10 @@ class Controller
 
     play()
     {
-        var position = this.takePosition();
+        var position = this.players[this.turnsRemaining%2].getPosition();
         this.board.setSymbol(position, this.players[this.turnsRemaining%2].getSymbol());
         this.gameFinished = this.board.tester(position, this.players[this.turnsRemaining%2].symbol);
         this.turnsRemaining --;
-    }
-
-    takePosition()
-    {
-        return this.players[this.turnsRemaining%2].getPosition();
     }
 
     displayResult()
