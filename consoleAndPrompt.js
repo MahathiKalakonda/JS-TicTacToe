@@ -1,3 +1,5 @@
+const prompt = require('prompt-sync')();
+
 class consoleAndPrompt
 {
     displayResult(playerName, gameFinished)
@@ -12,6 +14,11 @@ class consoleAndPrompt
         console.log(board.slice(3,6));
         console.log(board.slice(6,9));
         return 0;
+    }
+
+    getPosition(playerName)
+    {
+        return prompt('Enter Position of '+ playerName + ' : ');
     }
 }
 
