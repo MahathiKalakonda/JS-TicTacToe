@@ -1,5 +1,6 @@
 boardObject = require('./Board');
 playerObject = require('./Player');
+outputObject = require('./consoleAndPrompt');
 
 class GameController
 {
@@ -7,6 +8,7 @@ class GameController
     {
         this.gameFinished = false;
         this.turnsRemaining = 9;
+        this.display = new outputObject.consoleAndPrompt();
         this.board = new boardObject.Board();
         this.players = [new playerObject.Player("2nd Player", 'O'), new playerObject.Player("1st Player", 'X')];
     }
@@ -17,7 +19,7 @@ class GameController
         {
             this.play()
         }
-        this.displayResult();
+        this.display.displayResult(this.players[(this.turnsRemaining+1)%2].getName(), this.gameFinished);
         return 0;
     }
 
@@ -29,13 +31,8 @@ class GameController
         this.turnsRemaining --;
     }
 
-    displayResult()
-    {
-        this.gameFinished ? console.log(this.players[(this.turnsRemaining+1)%2].getName() + " won") : console.log("Draw Match");
-        return 0;
-    }
 }
 
 module.exports ={
-Controller:Controller
+GameController:GameController
 }
