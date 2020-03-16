@@ -1,7 +1,7 @@
 boardObject = require('./Board');
 playerObject = require('./Player');
 
-class Controller
+class GameController
 {
     constructor()
     {
