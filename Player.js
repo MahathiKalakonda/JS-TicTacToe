@@ -1,4 +1,3 @@
-const prompt = require('prompt-sync')();
 class Player
 {
     constructor(name, symbol)
@@ -16,11 +15,6 @@ class Player
         return this.name;
     }
 
-    getPosition()
-    {
-        const position = prompt('Enter Position');
-        return position;
-    }
 }
 
 module.exports =
