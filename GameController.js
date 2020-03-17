@@ -4,13 +4,13 @@ const inputAndOutputObject = require('./consoleAndPrompt');
 
 class GameController
 {
-    constructor()
+    constructor(players)
     {
         this.gameFinished = false;
         this.turnsRemaining = 9;
         this.promptAndDisplay = new inputAndOutputObject.consoleAndPrompt();
         this.board = new boardObject.Board();
-        this.players = [new playerObject.Player("2nd Player", 'O'), new playerObject.Player("1st Player", 'X')];
+        this.players = players;
     }
 
     startGame()
