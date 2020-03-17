@@ -1,31 +1,39 @@
 <html>
 <head>
+    <style>
+        .box
+        {
+            height:30px;
+            width:30px;
+            align:center;
+        }
+    </style>
     <title>TicTacToe</title>
 </head>
 <body>
 <h1 align="center">TicTacToe</h1>
-
+<p>Current turn :</p>
+<p id="playerName">1st Player</p>
 <table align="center" border="1">
     <tr>
-        <td><button onclick="myFunction(this.id)" id=0></button></td>
-        <td><button onclick="myFunction(this.id)" id=1></button></td>
-        <td><button onclick="myFunction(this.id)" id=2></button></td>
+        <td class="box"><button onclick="myFunction(this.id)" id=0></button></td>
+        <td class="box"><button onclick="myFunction(this.id)" id=1></button></td>
+        <td class="box"><button onclick="myFunction(this.id)" id=2></button></td>
     </tr>
     <tr>
-        <td><button onclick="myFunction()" id=3></button></td>
-        <td><button onclick="myFunction()" id=4></button></td>
-        <td><button onclick="myFunction()" id=5></button></td>
+        <td class="box"><button onclick="myFunction(this.id)" id=3></button></td>
+        <td class="box"><button onclick="myFunction(this.id)" id=4></button></td>
+        <td class="box"><button onclick="myFunction(this.id)" id=5></button></td>
     </tr>
     <tr>
-        <td><button onclick="myFunction()" id=6></button></td>
-        <td><button onclick="myFunction()" id=7></button></td>
-        <td><button onclick="myFunction()" id=8></button></td>
+        <td class="box"><button onclick="myFunction(this.id)" id=6></button></td>
+        <td class="box"><button onclick="myFunction(this.id)" id=7></button></td>
+        <td class="box"><button onclick="myFunction(this.id)" id=8></button></td>
     </tr>
 </table>
-<script>
-function myFunction(iden) {
-  document.getElementById(iden).innerHTML = iden;
-}
+
+<p id="status"></p>
+<script src="TicTacToe.js">
 </script>
 </body>
 </html>
