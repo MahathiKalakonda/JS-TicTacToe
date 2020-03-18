@@ -1,18 +1,33 @@
-//const controller = require('./GameController');
-//const playerObject = require('./Player');
-//
-//var players = [new playerObject.Player("2nd Player", 'O'), new playerObject.Player("1st Player", 'X')];
-//var ticTacToeController = new controller.GameController(players);
-//ticTacToeController.startGame();
+var TurnsRemaining = 9,gameStatus=false;
+var gameStatus = false;
 
-
-turnsRemaining = 9;
 function myFunction(position)
 {
-  var names = ["2nd Player", "1st Player"];
-  var symbols = ['O' , 'X'];
-  document.getElementById(position).innerHTML = symbols[turnsRemaining%2];
-  turnsRemaining--;
-//  ticTacToeController.play();
-  document.getElementById("playerName").innerHTML = turnsRemaining>0 ? names[turnsRemaining%2] : "Game Over";
+    if(gameStatus)
+        return 0;
+    var ticTacToeController = new GameController([new Player("2nd Player",'O'), new Player("1st Player",'X')]);
+    ticTacToeController.play(position,TurnsRemaining);
+    gameStatus=ticTacToeController.getGameFinished();
+    TurnsRemaining--;
+    displayStatus(ticTacToeController);
+}
+
+function displayStatus(ticTacToeController)
+{
+    if(gameStatus || TurnsRemaining == 0)
+        document.getElementById("status").innerHTML = ticTacToeController.getFinalStatus(TurnsRemaining);
+    else
+        document.getElementById("currentPlayer").innerHTML = ticTacToeController.getCurrentPlayer(TurnsRemaining);
+}
+
+function resetBoard()
+{
+    for(var id=0; id<=8; id++)
+    {
+        document.getElementById(id).innerHTML='';
+    }
+    document.getElementById("currentPlayer").innerHTML = "1st Player"
+    document.getElementById("status").innerHTML = ''
+    TurnsRemaining = 9;
+    gameStatus = false;
 }
