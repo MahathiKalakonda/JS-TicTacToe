@@ -10,3 +10,10 @@ button
     display: block;
     margin: 0 auto;
 }
+
+.scores
+{
+    margin-left:220px;
+    width:20%;
+    float:left;
+}
