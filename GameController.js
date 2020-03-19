@@ -28,4 +28,9 @@ class GameController
     {
         return this.players[turnsRemaining%2].name;
     }
+
+    getWinner(turnsRemaining)
+    {
+        return this.gameFinished ? this.players[(turnsRemaining+1)%2].name : "No Winner";
+    }
 }
