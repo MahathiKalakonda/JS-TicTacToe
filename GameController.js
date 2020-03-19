@@ -29,8 +29,11 @@ class GameController
         return this.players[turnsRemaining%2].name;
     }
 
-    getWinner(turnsRemaining)
+    updateScores(turnsRemaining)
     {
-        return this.gameFinished ? this.players[(turnsRemaining+1)%2].name : "No Winner";
+        var winner = this.gameFinished ? this.players[(turnsRemaining+1)%2].name : "No Winner";
+        if(winner !== "No Winner")
+            scores[(TurnsRemaining+1)%2]++;
+        document.getElementById(winner).innerHTML = winner + " : " + scores[(TurnsRemaining+1)%2];
     }
 }
