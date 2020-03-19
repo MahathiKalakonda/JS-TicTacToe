@@ -1,0 +1,12 @@
+.box
+{
+    height:30px;
+    width:30px;
+    text-align:center;
+}
+
+button
+{
+    display: block;
+    margin: 0 auto;
+}

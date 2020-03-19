@@ -3,7 +3,7 @@ var gameStatus = false;
 
 function myFunction(position)
 {
-    if(gameStatus)
+    if(gameStatus || document.getElementById(position).innerHTML)
         return 0;
     var ticTacToeController = new GameController([new Player("2nd Player",'O'), new Player("1st Player",'X')]);
     ticTacToeController.play(position,TurnsRemaining);
@@ -23,9 +23,7 @@ function displayStatus(ticTacToeController)
 function resetBoard()
 {
     for(var id=0; id<=8; id++)
-    {
         document.getElementById(id).innerHTML='';
-    }
     document.getElementById("currentPlayer").innerHTML = "1st Player"
     document.getElementById("status").innerHTML = ''
     TurnsRemaining = 9;
