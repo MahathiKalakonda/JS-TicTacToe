@@ -1,8 +1,11 @@
+for(let index = 0; index < 9; index++)
+    document.getElementById(index).addEventListener("click", startGame)
 var TurnsRemaining = 9,gameStatus=false;
 var gameStatus = false;
 var scores = [0,0];
-function myFunction(position)
+function startGame()
 {
+    let position = event.target.id;
     if(gameStatus || document.getElementById(position).innerHTML)
         return 0;
     var ticTacToeController = new GameController([new Player("2nd Player",'O'), new Player("1st Player",'X')]);
