@@ -7,7 +7,7 @@ class GameController
         this.players = players;
     }
 
-    play(position,turnsRemaining)
+    play(position, turnsRemaining)
     {
         this.board.setSymbol(position, this.players[turnsRemaining%2].getSymbol());
         this.gameFinished = this.board.isGameFinished(position, this.players[turnsRemaining%2].symbol);
@@ -35,5 +35,12 @@ class GameController
         if(winner !== "No Winner")
             scores[(TurnsRemaining+1)%2]++;
         document.getElementById(winner).innerHTML = winner + " : " + scores[(TurnsRemaining+1)%2];
+    }
+
+    highlightWinningPattern()
+    {
+        var winningCondition = this.board.getWinningCondition();
+        for(var index = 0; index < winningCondition.length; index++)
+            document.getElementById(winningCondition[index]).style.backgroundColor = "lightgrey";
     }
 }
