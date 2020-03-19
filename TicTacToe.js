@@ -18,6 +18,7 @@ function displayStatus(ticTacToeController)
     {
         document.getElementById("status").innerHTML = ticTacToeController.getFinalStatus(TurnsRemaining);
         ticTacToeController.updateScores(TurnsRemaining);
+        ticTacToeController.highlightWinningPattern();
     }
     else
         document.getElementById("currentPlayer").innerHTML = ticTacToeController.getCurrentPlayer(TurnsRemaining);
@@ -26,7 +27,10 @@ function displayStatus(ticTacToeController)
 function resetBoard()
 {
     for(var id=0; id<=8; id++)
+    {
         document.getElementById(id).innerHTML='';
+        document.getElementById(id).style.backgroundColor = "white";
+    }
     document.getElementById("currentPlayer").innerHTML = "1st Player"
     document.getElementById("status").innerHTML = ''
     TurnsRemaining = 9;

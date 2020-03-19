@@ -11,9 +11,14 @@ button
     margin: 0 auto;
 }
 
+div
+{
+    text-align:center;
+}
+
 .scores
 {
-    margin-left:230px;
+    margin-left:190px;
     width:20%;
     float:left;
 }
