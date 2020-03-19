@@ -1,6 +1,6 @@
 var TurnsRemaining = 9,gameStatus=false;
 var gameStatus = false;
-
+var scores = [0,0];
 function myFunction(position)
 {
     if(gameStatus || document.getElementById(position).innerHTML)
@@ -15,7 +15,10 @@ function myFunction(position)
 function displayStatus(ticTacToeController)
 {
     if(gameStatus || TurnsRemaining == 0)
+    {
         document.getElementById("status").innerHTML = ticTacToeController.getFinalStatus(TurnsRemaining);
+        updateScores(ticTacToeController);
+    }
     else
         document.getElementById("currentPlayer").innerHTML = ticTacToeController.getCurrentPlayer(TurnsRemaining);
 }
@@ -28,4 +31,12 @@ function resetBoard()
     document.getElementById("status").innerHTML = ''
     TurnsRemaining = 9;
     gameStatus = false;
+}
+
+function updateScores(ticTacToeController)
+{
+    var winner = ticTacToeController.getWinner(TurnsRemaining);
+    if(winner !== "No Winner")
+        scores[(TurnsRemaining+1)%2]++;
+    document.getElementById(winner).innerHTML = winner + " : " + scores[(TurnsRemaining+1)%2];
 }
