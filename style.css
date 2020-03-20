@@ -1,14 +1,35 @@
 .box
 {
-    height:30px;
-    width:30px;
+    height:60px;
+    width:60px;
     text-align:center;
+}
+
+#board
+{
+    width:60%;
+    height: 200px;
+    float:left;
+    margin:20px 0px;
+}
+
+#rules
+{
+    width:30%;
+    height: 200px;
+    float:left;
+    margin:20px 0px;
 }
 
 button
 {
     display: block;
     margin: 0 auto;
+}
+
+p
+{
+    text-align:center;
 }
 
 div
@@ -18,7 +39,7 @@ div
 
 .scores
 {
-    margin-left:190px;
-    width:20%;
+    margin-left:130px;
+    width:16%;
     float:left;
 }
