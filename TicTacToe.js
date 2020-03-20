@@ -34,8 +34,6 @@ function resetStatus()
 {
     var ticTacToeController = new GameController();
     ticTacToeController.resetDisplay();
-    document.getElementById("currentPlayer").innerHTML = "1st Player"
-    document.getElementById("status").innerHTML = ''
     TurnsRemaining = 9;
     gameStatus = false;
 }
