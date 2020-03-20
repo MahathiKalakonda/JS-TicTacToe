@@ -6,8 +6,8 @@
 </head>
 <body>
 <h1 align="center">TicTacToe</h1>
-<p>Current turn :</p>
-<p id="currentPlayer">1st Player</p>
+<div id="board">
+<p>Current turn :  <span id="currentPlayer">1st Player</span></p>
 <table align="center" border="1">
     <tr>
         <td class="box" id=0></td>
@@ -28,19 +28,33 @@
 <div>
 <p id="status"></p>
 </div>
-<button onclick="resetBoard()">Play Again</button>
+<button onclick="resetStatus()">Play Again</button>
 <br>
 <div>
     <div class="scores" id="1st Player">
-        Player 1 : 0
+        1st Player : 0
     </div>
     <div class="scores" id="2nd Player">
-        Player 2 : 0
+        2nd Player : 0
     </div>
+</div>
+</div>
+
+<div id="rules">
+    <details>
+        <summary>How to play ?</summary>
+    <ul>
+        <li>The game is played on a grid that's 3 squares by 3 squares.</li>
+        <li>1st Player is X and 2nd Player is O. Players take turns putting their marks in empty squares.</li>
+        <li> The first player to get 3 of her marks in a row (up, down, across, or diagonally) is the winner.</li>
+        <li>When all 9 squares are full, the game is over. If no player has 3 marks in a row, the game ends in a tie.</li>
+    </ul>
+    </details>
 </div>
 <script src="TicTacToe.js"></script>
 <script src="GameController.js"></script>
 <script src="Board.js"></script>
 <script src="Player.js"></script>
+<script src="InputAndOutput.js"></script>
 </body>
 </html>
