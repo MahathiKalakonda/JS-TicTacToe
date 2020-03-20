@@ -1,8 +1,11 @@
-for(let index = 0; index < 9; index++)
-    document.getElementById(index).addEventListener("click", startGame)
-var TurnsRemaining = 9,gameStatus=false;
-var gameStatus = false;
-var scores = [0,0];
+var TurnsRemaining = 9, gameStatus = false, scores = [ 0, 0];
+
+function createEventListeners()
+{
+    for(let index = 0; index < 9; index++)
+        document.getElementById(index).addEventListener("click", startGame)
+}
+
 function startGame()
 {
     let position = event.target.id;
@@ -27,15 +30,14 @@ function displayStatus(ticTacToeController)
         document.getElementById("currentPlayer").innerHTML = ticTacToeController.getCurrentPlayer(TurnsRemaining);
 }
 
-function resetBoard()
+function resetStatus()
 {
-    for(var id=0; id<=8; id++)
-    {
-        document.getElementById(id).innerHTML='';
-        document.getElementById(id).style.backgroundColor = "white";
-    }
+    var ticTacToeController = new GameController();
+    ticTacToeController.resetDisplay();
     document.getElementById("currentPlayer").innerHTML = "1st Player"
     document.getElementById("status").innerHTML = ''
     TurnsRemaining = 9;
     gameStatus = false;
 }
+
+window.onload = createEventListeners;
