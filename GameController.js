@@ -32,17 +32,15 @@ class GameController
 
     updateScores(turnsRemaining)
     {
-        var winner = this.gameFinished ? this.players[(turnsRemaining+1)%2].name : "No Winner";
-        if(winner !== "No Winner")
-            scores[(TurnsRemaining+1)%2]++;
-        document.getElementById(winner).innerHTML = winner + " : " + scores[(TurnsRemaining+1)%2];
+        if(this.gameFinished)
+            scores[(turnsRemaining+1)%2]++;
+        this.inputAndOutput.displayUpdatedScore(this.players[(turnsRemaining+1)%2].name, scores[(turnsRemaining+1)%2]);
     }
 
     highlightWinningPattern()
     {
         var winningCondition = this.board.getWinningCondition();
-        for(var index = 0; index < winningCondition.length; index++)
-            document.getElementById(winningCondition[index]).style.backgroundColor = "lightgrey";
+        this.inputAndOutput.highlightBackground(winningCondition);
     }
 
     resetDisplay()
