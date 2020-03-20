@@ -5,11 +5,12 @@ class GameController
         this.gameFinished = false;
         this.board = new Board();
         this.players = players;
+        this.inputAndOutput = new InputAndOutput();
     }
 
     play(position, turnsRemaining)
     {
-        this.board.setSymbol(position, this.players[turnsRemaining%2].getSymbol());
+        this.inputAndOutput.displaySymbol(position, this.players[turnsRemaining%2].getSymbol());
         this.gameFinished = this.board.isGameFinished(position, this.players[turnsRemaining%2].symbol);
         return;
     }
@@ -42,5 +43,11 @@ class GameController
         var winningCondition = this.board.getWinningCondition();
         for(var index = 0; index < winningCondition.length; index++)
             document.getElementById(winningCondition[index]).style.backgroundColor = "lightgrey";
+    }
+
+    resetDisplay()
+    {
+        this.inputAndOutput.emptyBoard();
+        this.inputAndOutput.resetPlayerStatus();
     }
 }
