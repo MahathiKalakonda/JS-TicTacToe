@@ -20,4 +20,15 @@ class InputAndOutput
         document.getElementById(position).innerHTML = symbol;
         return 0;
     }
+
+    highlightBackground(pattern)
+    {
+        for(var index = 0; index < pattern.length; index++)
+            document.getElementById(pattern[index]).style.backgroundColor = "lightgrey";
+    }
+
+    displayUpdatedScore(name, score)
+    {
+        document.getElementById(name).innerHTML = name + " : " + score;
+    }
 }
