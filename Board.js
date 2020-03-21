@@ -7,19 +7,10 @@ class Board
         this.status = false;
     }
 
-    setSymbol(position, symbol)
-    {
-        document.getElementById(position).innerHTML = symbol;
-        return 0;
-    }
-
     getBoard()
     {
-        var board = ['','','','','','','','',''];
-        return board.map(function(element, index)
-            {
-                return document.getElementById(index).innerHTML;
-            })
+        var ticTacToeController = new GameController();
+        return ticTacToeController.getBoard();
     }
 
     isGameFinished(position, symbol)
