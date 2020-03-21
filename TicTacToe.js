@@ -15,19 +15,6 @@ function startGame()
     ticTacToeController.play(position,TurnsRemaining);
     gameStatus=ticTacToeController.getGameFinished();
     TurnsRemaining--;
-    displayStatus(ticTacToeController);
-}
-
-function displayStatus(ticTacToeController)
-{
-    if(gameStatus || TurnsRemaining == 0)
-    {
-        document.getElementById("status").innerHTML = ticTacToeController.getFinalStatus(TurnsRemaining);
-        ticTacToeController.updateScores(TurnsRemaining);
-        ticTacToeController.highlightWinningPattern();
-    }
-    else
-        document.getElementById("currentPlayer").innerHTML = ticTacToeController.getCurrentPlayer(TurnsRemaining);
 }
 
 function resetStatus()
