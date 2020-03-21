@@ -31,4 +31,23 @@ class InputAndOutput
     {
         document.getElementById(name).innerHTML = name + " : " + score;
     }
+
+    displayFinalStatus(finalStatus)
+    {
+        document.getElementById("status").innerHTML = finalStatus;
+    }
+
+    displayCurrentPlayer(currentPlayer)
+    {
+        document.getElementById("currentPlayer").innerHTML = currentPlayer;
+    }
+
+    getGameBoard()
+    {
+        var board = ['','','','','','','','',''];
+        return board.map(function(element, index)
+            {
+                return document.getElementById(index).innerHTML;
+            })
+    }
 }
