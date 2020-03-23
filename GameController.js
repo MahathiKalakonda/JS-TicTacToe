@@ -1,9 +1,9 @@
 class GameController
 {
-    constructor(players)
+    constructor(players, board)
     {
         this.gameFinished = false;
-        this.board = new Board();
+        this.board = board;
         this.players = players;
         this.inputAndOutput = new InputAndOutput();
     }

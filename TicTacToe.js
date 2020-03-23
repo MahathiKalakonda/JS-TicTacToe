@@ -11,7 +11,7 @@ function startGame()
     let position = event.target.id;
     if(gameStatus || document.getElementById(position).innerHTML)
         return 0;
-    var ticTacToeController = new GameController([new Player("2nd Player",'O'), new Player("1st Player",'X')]);
+    var ticTacToeController = new GameController([new Player("2nd Player",'O'), new Player("1st Player",'X')], new Board());
     ticTacToeController.play(position,TurnsRemaining);
     gameStatus=ticTacToeController.getGameFinished();
     TurnsRemaining--;
