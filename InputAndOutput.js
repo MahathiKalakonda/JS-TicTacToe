@@ -24,7 +24,7 @@ class InputAndOutput
     highlightBackground(pattern)
     {
         for(var index = 0; index < pattern.length; index++)
-            document.getElementById(pattern[index]).style.backgroundColor = "lightgrey";
+            document.getElementById(pattern[index]).style.backgroundColor = "gold";
     }
 
     displayUpdatedScore(name, score)

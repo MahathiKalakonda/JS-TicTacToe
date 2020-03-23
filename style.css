@@ -13,6 +13,11 @@
     margin:20px 0px;
 }
 
+#currentPlayer
+{
+    color:green;
+}
+
 #rules
 {
     width:30%;
@@ -37,9 +42,19 @@ div
     text-align:center;
 }
 
+#status
+{
+    color:red;
+}
+
 .scores
 {
     margin-left:130px;
     width:16%;
     float:left;
+}
+
+.RulesList
+{
+    border-style: solid;
 }
