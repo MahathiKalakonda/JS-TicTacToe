@@ -2,8 +2,9 @@ var TurnsRemaining = 9, gameStatus = false, scores = [ 0, 0];
 
 function createEventListeners()
 {
-    for(let index = 0; index < 9; index++)
-        document.getElementById(index).addEventListener("click", startGame)
+    var cells = document.getElementsByClassName("box");
+    for(let index = 0; index < cells.length; index++)
+        cells[index].addEventListener("click", startGame);
 }
 
 function startGame()
